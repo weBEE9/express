@@ -5,7 +5,7 @@ import { migrate } from 'drizzle-orm/node-postgres/migrator';
 
 const cfg = getConfig();
 
-const client = new pg.Client({
+const pool = new pg.Pool({
   host: cfg.Host,
   port: Number(cfg.Port),
   user: cfg.User,
@@ -13,12 +13,11 @@ const client = new pg.Client({
   database: cfg.Name,
 });
 
-const db = drizzle(client);
+const db = drizzle(pool);
 
 const main = async () => {
   try {
     console.log('schema migration started...');
-    await client.connect();
 
     await migrate(db, {
       migrationsFolder: 'src/db/migrations',
