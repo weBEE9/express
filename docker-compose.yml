@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:14
+    ports:
+      - '5432:5432'
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: bookstore
+      POSTGRES_USER: bookstore
+      POSTGRES_PASSWORD: bookstore
+
+volumes:
+  pg-data:
