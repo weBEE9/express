@@ -5,8 +5,9 @@
   },
   "compilerOptions": {
     "target": "ESNext", // 要編譯成的 JS 目標版本
-    "module": "ESNext", // 要編譯成的 module
-    "moduleResolution": "node", // module 解析方式, default "classic"
+    // see https://medium.com/codememo/node-js-typescript-with-esm-in-2023-6b87e6f8e737 for more info
+    "module": "nodeNext", // 要編譯成的 module
+    "moduleResolution": "nodenext", // module 解析方式, default "classic"
     "esModuleInterop": true, // module 兼容, 會影響 build 方式
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
@@ -15,5 +16,5 @@
     "rootDirs": ["src"],
     "outDir": "dist"
   },
-  "exclude": ["codegen.ts", "dist", "node_modules"]
+  "exclude": ["codegen.ts", "dist", "node_modules", "jest.config.js"]
 }

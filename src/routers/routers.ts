@@ -5,11 +5,15 @@ import BookHandler from '../handlers/book_handler.js';
 import { IBookService } from '../services/services.js';
 import { BookService } from '../services/book_service.js';
 
-import { IBookRepository } from '../repository/repository.js';
-import { BookRepositoryStub } from '../repository/book_repository_stub.js';
+import { IBookRepository, Creator } from '../repository/repository.js';
 import { pong } from '../handlers/handlers.js';
+import getConfig from '../config/db.config.js';
 
-const bookRepository: IBookRepository = new BookRepositoryStub();
+const dbCfg = getConfig();
+
+const bookRepository: IBookRepository = Creator.createBookRepository(
+  dbCfg.Dirver
+);
 const bookService: IBookService = new BookService(bookRepository);
 const bookHandler = new BookHandler(bookService);
 
