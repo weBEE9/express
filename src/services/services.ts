@@ -1,4 +1,4 @@
-import { Book } from '../models/models.js';
+import { Book } from '../db/book.js';
 
 export interface IBookService {
   getBooks: () => Promise<Book[]>;

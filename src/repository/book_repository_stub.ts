@@ -1,4 +1,4 @@
-import { Book } from '../models/book.js';
+import { Book } from '../db/book.js';
 
 import { IBookRepository } from './repository.js';
 

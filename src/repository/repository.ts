@@ -1,4 +1,4 @@
-import { Book } from '../models/models.js';
+import { Book } from '../db/book.js';
 
 import { BookRepositoryStub } from './book_repository_stub.js';
 
