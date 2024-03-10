@@ -1,8 +1,4 @@
 {
-  "ts-node": {
-    "transpileOnly": true,
-    "esm": true // 指定 ts-node 用 esm 執行, 也可用 --esm 在 cmd 下指令
-  },
   "compilerOptions": {
     "target": "ESNext", // 要編譯成的 JS 目標版本
     // see https://medium.com/codememo/node-js-typescript-with-esm-in-2023-6b87e6f8e737 for more info
@@ -13,8 +9,15 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    "rootDirs": ["src"],
-    "outDir": "dist"
+    "rootDir": "./src",
+    "outDir": "./dist"
   },
-  "exclude": ["codegen.ts", "dist", "node_modules", "jest.config.js"]
+  "exclude": [
+    "codegen.ts",
+    "dist",
+    "node_modules",
+    "jest.config.ts",
+    "*.test.ts",
+    "coverage"
+  ]
 }
