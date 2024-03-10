@@ -8,16 +8,13 @@
     "start": "npm run compile && node ./dist/index.js",
     "dev": "nodemon --exec tsx ./src/index.ts",
     "db:generate": "drizzle-kit generate:pg --schema ./src/db/schema.ts --out ./src/db/migrations",
-    "db:migrate": "tsx ./src/db/migrate.ts"
+    "db:migrate": "tsx ./src/db/migrate.ts",
+    "test": "jest"
   },
   "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "jest": {
-    "preset": "ts-jest",
-    "testEnvironment": "node"
-  },
   "devDependencies": {
     "@types/jest": "^29.5.12",
     "@types/node": "^20.11.22",
