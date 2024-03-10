@@ -1,4 +1,4 @@
-import { book } from './schema';
+import { book } from './schema.js';
 
 import { InferInsertModel, InferSelectModel } from 'drizzle-orm';
 
